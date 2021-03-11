@@ -10,7 +10,7 @@ const bodyParser = require('body-parser');
 const { database, port } = require('./config');
 const log4js = require("log4js");
 log4js.configure({
-  appenders: { data: { type: "file", filename: "data.log" } },
+  appenders: { data: { type: "file", filename: "data_audit_uptc.log" } },
   categories: { default: { appenders: ["data"], level: "info" } }
 });
  
