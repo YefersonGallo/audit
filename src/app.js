@@ -7,8 +7,14 @@ const passport = require('passport');
 const flash = require('connect-flash');
 const MySQLStore = require('express-mysql-session')(session);
 const bodyParser = require('body-parser');
-
 const { database, port } = require('./config');
+const log4js = require("log4js");
+log4js.configure({
+  appenders: { data: { type: "file", filename: "data.log" } },
+  categories: { default: { appenders: ["data"], level: "info" } }
+});
+ 
+const logger = log4js.getLogger("data");
 
 // Intializations
 const app = express();

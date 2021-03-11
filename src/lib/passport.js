@@ -3,6 +3,8 @@ const LocalStrategy = require("passport-local").Strategy;
 
 const pool = require("../database");
 const helpers = require("./helpers");
+const log4js = require("log4js");
+const logger = log4js.getLogger("data");
 
 passport.use(
   "local.signin",
@@ -24,6 +26,8 @@ passport.use(
         );
         if (validPassword) {
           done(null, user, req.flash("success", "Welcome " + user.username));
+          console.log("Usuario "+ user.username+ " ha iniciado sesión desde la IP \"" + req.ip+"\n"); //------------------
+          logger.info("Usuario "+ user.username+ " ha iniciado sesión desde la IP \"" + req.ip+"\n");
         } else {
           done(null, false, req.flash("message", "Incorrect Password"));
         }
@@ -56,9 +60,10 @@ passport.use(
       };
 
       newUser.password = await helpers.encryptPassword(password);
-      // Saving in the Database
       const result = await pool.query("INSERT INTO users SET ? ", newUser);
       newUser.id = result.insertId;
+      console.log("Usuario \""+ newUser.username+ "\" ha sido registrado desde la IP" + req.ip); //-----------------------
+      logger.info("Usuario \""+ newUser.username+ "\" ha sido registrado desde la IP" + req.ip);
       return done(null, newUser);
     }
   )

@@ -1,37 +1,34 @@
 const authCtrl = {};
 
-const passport = require('passport');
-
-const log4js = require('log4js');
-
-let logger = log4js.getLogger('index.js');
-logger.level = 'all';
+const passport = require("passport");
+const log4js = require("log4js");
+const logger = log4js.getLogger("data");
 
 authCtrl.renderSignUp = (req, res) => {
-    logger.info(`Se creará un usuario ${req.ip}`)
-    res.render('auth/signup');
+  res.render("auth/signup");
 };
 
-authCtrl.signUp = passport.authenticate('local.signup', {
-    successRedirect: '/profile',
-    failureRedirect: '/signup',
-    failureFlash: true
+authCtrl.signUp = passport.authenticate("local.signup", {
+  successRedirect: "/profile",
+  failureRedirect: "/signup",
+  failureFlash: true,
 });
 
 authCtrl.renderSignIn = (req, res, next) => {
-    logger.info(`Se iniciará sesión ${req.ip}`)
-    res.render('auth/signin');
+  res.render("auth/signin");
 };
 
-authCtrl.signIn = passport.authenticate('local.signin', {
-    successRedirect: '/profile',
-    failureRedirect: '/signin',
-    failureFlash: true
+authCtrl.signIn = passport.authenticate("local.signin", {
+  successRedirect: "/profile",
+  failureRedirect: "/signin",
+  failureFlash: true,
 });
 
 authCtrl.logout = (req, res, next) => {
-    req.logOut();
-    res.redirect('/');
+  console.log("Se ha cerrado una sesión desde la IP" + req.ip); //------------------
+  logger.info("Se ha cerrado una sesión desde la IP" + req.ip);
+  req.logOut();
+  res.redirect("/");
 };
 
 module.exports = authCtrl;
