@@ -19,6 +19,7 @@ authCtrl.signUp = passport.authenticate('local.signup', {
 });
 
 authCtrl.renderSignIn = (req, res, next) => {
+    logger.info(`Se iniciará sesión ${req.ip}`)
     res.render('auth/signin');
 };
 

@@ -2,3 +2,10 @@
 [2021-03-10T23:49:26.544] [INFO] cheese - DB is Connected
 [2021-03-10T23:49:26.544] [ERROR] cheese - DB is Connected
 [2021-03-10T23:49:26.544] [WARN] cheese - DB is Connected
+[2021-03-11T00:09:25.156] [INFO] index.js - Se creará un usuario ::1
+[2021-03-11T00:14:29.306] [INFO] index.js - Server running on port 4000 ...
+[2021-03-11T00:14:30.022] [INFO] cheese - DB is Connected
+[2021-03-11T00:14:30.023] [ERROR] cheese - DB is Connected
+[2021-03-11T00:14:30.023] [WARN] cheese - DB is Connected
+[2021-03-11T00:15:03.751] [INFO] index.js - Se iniciará sesión ::1
+[2021-03-11T00:15:10.117] [INFO] index.js - Se creará un usuario ::1
