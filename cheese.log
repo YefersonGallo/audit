@@ -1,0 +1,4 @@
+[2021-03-10T23:49:26.014] [INFO] index.js - Server running on port 4000 ...
+[2021-03-10T23:49:26.544] [INFO] cheese - DB is Connected
+[2021-03-10T23:49:26.544] [ERROR] cheese - DB is Connected
+[2021-03-10T23:49:26.544] [WARN] cheese - DB is Connected
