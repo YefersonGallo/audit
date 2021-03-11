@@ -4,8 +4,8 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "dev": "nodemon src/index.js",
-    "start": "nodemon src/index.js"
+    "dev": "node src/index.js",
+    "start": "node src/index.js"
   },
   "keywords": [],
   "author": "Andrés Gallo <andres.gallo@monolegal.co>",
@@ -25,9 +25,5 @@
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "timeago.js": "^4.0.2"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.6"
-  },
-  "repository": "https://github.com/FaztTech/nodejs-mysql-links.git"
+  }
 }
