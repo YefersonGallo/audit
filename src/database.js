@@ -31,6 +31,8 @@ pool.getConnection((err, connection) => {
     if (connection) connection.release();
     logger.info('DB is Connected');
 
+    console.log('DB is Connected')
+
     logger.error('DB is Connected');
     logger.warn('DB is Connected');
     return;
